@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Details</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 30px;
+        }
+        body{
+            background-color: #bbc4f8;
+        }
+        .container{
+            background-color: #C8A1E0;
+            box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width:fit-content;
+            height: fit-content;
+            margin: 100px auto auto auto;
+            padding: 50px;
+            padding-bottom: 0;
+        }
+
+        label{
+            font-weight: 600;
+        }
+        button{
+            background-color: #674188;
+            position: relative;
+            margin-left: auto;
+            margin-top: 10px;
+            width: 5cm;
+            border-color: #674188;
+            transition-property: all;
+        }
+        .input{
+            background-color:#F7EFE5;
+            border-color: #674188;
+            border-width: 1px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-family: cursive;
+            padding: 0 20px 0 20px;
+        }
+        button:hover{
+            background-color:#453bdf ;
+            box-shadow:0 4px 40px 0 rgba(16, 3, 201, 0.4), 0 6px 20px 0 rgba(212, 2, 2, 0.3);
+            font-size: 21px;
+            font-weight: 610;
+            transition-timing-function:ease-in ;
+        }
+        input:hover{
+            background-color: #e5edf7;
+            box-shadow:0 4px 40px 0 rgba(16, 3, 201, 0.4), 0 6px 20px 0 rgba(212, 2, 2, 0.3);
+        }
+
+        button:active{
+            background-color: #1e1c42;
+        }
+        #b{
+            width: fit-content;
+            margin: auto;
+            margin-top: 30px;
+        }
+        #p1{
+            text-align: right;
+            position:static;
+            margin-bottom: 0;
+            margin-right: 0;
+            padding-right: 0;
+            font-size: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .rank {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+        
+.disclaimer{
+   width: 340px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+            margin-right: 0;
+            padding-right: 0;
+           
+    
+}
+
+.heading {
+    text-align: center;
+    font-size: 32px; /* Adjust size as needed */
+    font-weight: bold;
+    color: #453bdf; /* You can change the color */
+    margin-bottom: 20px; /* Space below the heading */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+#p2{
+    text-align: center;
+    font-size: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">CET Rank Predictor</h1>
+
+        <form class="form" action="/" method="POST">
+            <label for="mob">Enter Your Mobile Number:</label><br>
+            <input class="input" type="number" name="mob" placeholder="Mobile Number" required><br>
+        
+            <label for="name1">Enter your Name:</label><br>
+            <input class="input" type="text" name="name1" placeholder="Name" required><br>
+        
+            <label for="score">Enter Your CET score:</label><br>
+            <input class="input" type="text" name="score" placeholder="CET Score" required step="0.01"><br>
+        
+            <!-- Show the rank if it exists -->
+            {% if rank is not none %}
+                <div class="rank">Your Rank: {{ rank }}</div>
+            {% endif %}
+        
+            <div id="b">
+                <button type="submit" value="Submit">Submit</button>
+            </div>
+            
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <p id="p2">Disclaimer: The rank provided is an estimate based on the given CET score ,previous year data and the total number of students register for CAP round. Actual rank may vary based on other factors.</p>
+            </div>
+        </form>
+        
+        <p id="p1">Made by Yashraj</p>
+    </div>
+</body>
+</html>
